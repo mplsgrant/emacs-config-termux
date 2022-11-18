@@ -1,4 +1,4 @@
-* Straight
+* straight
 #+begin_src emacs-lisp
 (defvar bootstrap-version)
 (let ((bootstrap-file
