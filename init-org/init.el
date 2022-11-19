@@ -143,3 +143,5 @@
     (delete-file old-location))))
 
 (find-file "~/.emacs.d/init-org/init.org")
+
+(defalias 'yes-or-no-p 'y-or-n-p)

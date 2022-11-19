@@ -203,4 +203,7 @@
 #+begin_src emacs-lisp
   (find-file "~/.emacs.d/init-org/init.org")
 #+end_src
-
+* y-or-n-p
+#+begin_src emacs-lisp
+  (defalias 'yes-or-no-p 'y-or-n-p)
+#+end_src
