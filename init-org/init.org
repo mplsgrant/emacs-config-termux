@@ -467,15 +467,15 @@
                 ("C-c C-c Q" . lsp-workspace-shutdown)
                 ("C-c C-c s" . lsp-rust-analyzer-status)
                 ("M-i"       . lsp-ui-doc-glance)
-                ("C-M-i"     . flycheck-explain-error-at-point))
+                ("C-i"     . flycheck-explain-error-at-point))
     :config
     ;; uncomment for less flashiness
-    ;; (setq lsp-eldoc-hook nil)
-    ;; (setq lsp-enable-symbol-highlighting nil)
-    ;; (setq lsp-signature-auto-activate nil)
+    (setq lsp-eldoc-hook nil)
+    (setq lsp-enable-symbol-highlighting t)
+    (setq lsp-signature-auto-activate nil)
 
     ;; comment to disable rustfmt on save
-    (setq rustic-format-on-save t)
+    ;; (setq rustic-format-on-save t)
     (add-hook 'rustic-mode-hook 'rk/rustic-mode-hook))
 
   (defun rk/rustic-mode-hook ()
@@ -523,6 +523,13 @@
       (lsp-ui-sideline-show-code-actions nil)
       (lsp-ui-sideline-diagnostic-max-lines 0)
         )
+#+end_src
+
+* flycheck
+#+begin_src emacs-lisp
+  (use-package flycheck
+    :straight t
+    )
 #+end_src
 
 * projectile
