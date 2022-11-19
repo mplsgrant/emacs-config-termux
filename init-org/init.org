@@ -524,3 +524,14 @@
       (lsp-ui-sideline-diagnostic-max-lines 0)
         )
 #+end_src
+
+* projectile
+#+begin_src emacs-lisp
+  (use-package projectile
+    :straight t
+    :config
+    (global-set-key (kbd "C-c p") 'projectile-command-map)
+    )
+  (projectile-mode +1)
+#+end_src
+
