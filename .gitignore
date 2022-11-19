@@ -3,3 +3,6 @@
 /auto-save-list
 init-org/init.el
 
+/.lsp-session-v1
+/elpa/
+/history
