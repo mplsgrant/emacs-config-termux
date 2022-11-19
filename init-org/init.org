@@ -535,3 +535,11 @@
   (projectile-mode +1)
 #+end_src
 
+* pass
+#+begin_src emacs-lisp
+(use-package pass
+  :straight t
+  :config
+  (setf epa-pinentry-mode 'loopback))
+#+end_src
+
