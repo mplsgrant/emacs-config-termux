@@ -217,10 +217,9 @@
     (which-key-mode)
     (which-key-setup-side-window-bottom)
     (setq which-key-idle-delay 0.1))
-
 #+end_src
 
-* verico
+* vertico
 #+begin_src emacs-lisp
     ;; Enable vertico
   (use-package vertico
