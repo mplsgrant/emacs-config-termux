@@ -7,3 +7,4 @@ init-org/init.el
 /elpa/
 /history
 /projectile-bookmarks.eld
+/eshell/
