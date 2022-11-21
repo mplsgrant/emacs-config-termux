@@ -469,8 +469,11 @@
                 ("C-c C-c q" . lsp-workspace-restart)
                 ("C-c C-c Q" . lsp-workspace-shutdown)
                 ("C-c C-c s" . lsp-rust-analyzer-status)
-                ("M-i"       . lsp-ui-doc-glance)
-                ("C-i"     . flycheck-explain-error-at-point))
+                ("M-i i"     . lsp-ui-doc-glance)
+                ("C-i i"     . flycheck-explain-error-at-point)
+                ("C-i j"     . xref-find-definitions)
+                ("M-i j"     . xref-go-back)
+                )
     :config
     ;; uncomment for less flashiness
     (setq lsp-eldoc-hook nil)
