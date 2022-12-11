@@ -96,11 +96,13 @@
   (setq-default tab-width 4)
 #+end_src
 
-* install smartparens
+* smartparens
   #+begin_src emacs-lisp
     (use-package smartparens
       :straight t
       :bind (("M-]" . sp-slurp-hybrid-sexp)
+             ("C-M-<right>" . sp-forward-slurp-sexp)
+             ("C-M-<left>" . sp-forward-barf-sexp)
                  )
        )
 
