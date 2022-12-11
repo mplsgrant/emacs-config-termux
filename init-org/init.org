@@ -615,3 +615,44 @@
     :straight t)
 #+end_src
 
+* org-babel
+#+begin_src emacs-lisp
+  (org-babel-do-load-languages 'org-babel-load-languages
+      '(
+          (shell . t)
+          (sql   . t)
+      )
+  )
+#+end_src
+
+* svelte
+#+begin_src emacs-lisp
+  (use-package svelte-mode
+    :straight t)
+#+end_src
+
+** closing tags hack
+https://github.com/leafOfTree/svelte-mode#closing-tags-for-components-with-reserved-names
+#+begin_src emacs-lisp
+  (defun svelte-mode-sgml-empty-tag-p-advice (old-function tag-name)
+    "Advice function intended to wrap around `sgml-empty-tag-p
+
+  Makes case significant when checking whether tags need to be
+  closed or not, to not confuse elements with Svelte components."
+    (if (eq major-mode 'svelte-mode)
+        (assoc-string tag-name sgml-empty-tags)
+      (funcall old-function tag-name)))
+
+  (defun svelte-mode-sgml-unclosed-tag-p-advice (old-function tag-name)
+    "Advice function intended to wrap around `sgml-unclosed-tag-p
+
+  Makes case significant when checking whether tags need to be
+  closed or not, to not confuse elements with Svelte components."
+    (if (eq major-mode 'svelte-mode)
+        (assoc-string tag-name sgml-unclosed-tags)
+      (funcall old-function tag-name)))
+
+  (advice-add 'sgml-empty-tag-p :around 'svelte-mode-sgml-empty-tag-p-advice)
+  (advice-add 'sgml-unclosed-tag-p :around 'svelte-mode-sgml-unclosed-tag-p-advice)
+#+end_src
+
